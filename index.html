@@ -969,7 +969,7 @@
                           document.getElementById("node").innerHTML = mytime;
                           var userName = getQueryVariable("username");
                           if (userName != false) {
-                            document.getElementById("username").innerHTML = unescape(userName);
+                            document.getElementById("username").innerHTML = decodeURI(userName);
                           } else {
                             document.getElementById("username").innerHTML = "陈江华"
                           }
