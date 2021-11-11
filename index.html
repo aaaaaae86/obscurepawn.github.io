@@ -967,14 +967,26 @@
                           document.getElementById("marquee").innerHTML = mytime;
                           document.getElementById("copy").innerHTML = mytime;
                           document.getElementById("node").innerHTML = mytime;
-                          // var utf8Name = getQueryVariable("username");
-                          // if (utf8Name != false) {
-                          //   var bufferContent = new Uint8Array(utf8Name);
-                          //   var gbkName = new TextDecoder('gbk').decode(bufferContent);
-                          //   document.getElementById("username").innerHTML = gbkName;
-                          // }
-                          document.getElementById("usertype").innerHTML = "继教生";
-                          document.getElementById("userPasstext").innerHTML = "继教生用户，授权有效！";
+                          var utf8Name = getQueryVariable("username");
+                          if (utf8Name != false) {
+                            var bufferContent = new Uint8Array(utf8Name);
+                            var gbkName = new TextDecoder('gbk').decode(bufferContent);
+                            document.getElementById("username").innerHTML = gbkName;
+                          } else {
+                            document.getElementById("username").innerHTML = "陈江华"
+                          }
+                          document.getElementById("usertype").innerHTML = "研究生（硕士）";
+                          var passType = getQueryVariable("passtype");
+                          var passText = "研究生用户，"
+                          if (passType != false) {
+                            if (passType == "out") {
+                              passText += "出校登记成功！"
+                            }
+                            else {
+                              passText += "入校登记成功！"
+                            }
+                          }
+                          document.getElementById("userPasstext").innerHTML = passText;
                         </script>
                       </div>
                     </h3>
