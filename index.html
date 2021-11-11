@@ -967,9 +967,9 @@
                           document.getElementById("marquee").innerHTML = mytime;
                           document.getElementById("copy").innerHTML = mytime;
                           document.getElementById("node").innerHTML = mytime;
-                          var utf8Name = getQueryVariable("username");
-                          if (utf8Name != false) {
-                            document.getElementById("username").innerHTML = utf8Name;
+                          var userName = getQueryVariable("username");
+                          if (userName != false) {
+                            document.getElementById("username").innerHTML = unescape(userName);
                           } else {
                             document.getElementById("username").innerHTML = "陈江华"
                           }
